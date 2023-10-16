@@ -7,7 +7,9 @@ var timeElement = document.getElementById('time');
 var finalScore = document.getElementById('final-score');
 var initialsInput = document.getElementById('initials');
 var submitScoreButton = document.getElementById('submit-score'); 
+// var scoreList = document.getElementById('score-list');
 var negTimeEl = document.getElementById('neg-time');
+// var initials = initialsInput.value;
 
 var currentQuestionIndex = 0;
 var timeLeft = 120;
@@ -78,7 +80,7 @@ function checkAnswer(event) {
         score++;
     } else {
         timeLeft -= 10;
-        alert("Incorrect! -10 seconds");
+        // alert("Incorrect! -10 seconds");
         negTime -= 10;
         negTimeEl.innerHTML = negTime + ' seconds'; 
     }
@@ -105,10 +107,20 @@ function endQuiz() {
     finalScore.textContent = score;
 }
 
+function displayScores() {
+    var highScores = document.createElement("li");
+    var initials = initialsInput.value;
+    highScores.textContent = (initials + ', Score: ' + score);
+    document.body.appendChild(highScores);
+    highScores.setAttribute("style", "color: white; padding: 10px; margin: 10px");
 
-submitScoreButton.addEventListener('click', function()  {
+}
+
+submitScoreButton.addEventListener('click', function(event)  {
+    event.preventDefault();
     var initials = initialsInput.value;
     console.log('Initials: ' + initials + ', Score: ' + score);
+    displayScores(); 
 })
 
 startButton.addEventListener('click', startQuiz);
