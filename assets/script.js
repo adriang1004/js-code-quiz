@@ -33,6 +33,11 @@ var questions = [
         question: "The condition in an if / else statement is enclosed with _____.",
         choices: ["quotes", "curly brackets", "parenthesis", "square brackets"],
         correctAnswer: "parenthesis",
+    },
+    {
+        question: "Arrays in JavaScript can be used to store ____.",
+        choices: ["numbers and strings", "booleans", "other arrays", "all of the above"], 
+        correctAnswer: "all of the above",
     }
 ];
 
