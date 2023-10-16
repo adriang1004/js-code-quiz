@@ -7,10 +7,12 @@ var timeElement = document.getElementById('time');
 var finalScore = document.getElementById('final-score');
 var initialsInput = document.getElementById('initials');
 var submitScoreButton = document.getElementById('submit-score'); 
+var negTimeEl = document.getElementById('neg-time');
 
 var currentQuestionIndex = 0;
 var timeLeft = 120;
 var score = 0;
+var negTime = 0;
 
 
 var questions = [
@@ -76,6 +78,9 @@ function checkAnswer(event) {
         score++;
     } else {
         timeLeft -= 10;
+        alert("Incorrect! -10 seconds");
+        negTime -= 10;
+        negTimeEl.innerHTML = negTime + ' seconds'; 
     }
 
     currentQuestionIndex++;

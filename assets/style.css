@@ -38,3 +38,7 @@ button:hover {
 #choices button:hover {
     background-color: #2b435e;
 }
+
+#neg-time {
+    color: red;
+}
